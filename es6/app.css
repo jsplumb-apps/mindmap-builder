@@ -1,0 +1,153 @@
+:root {
+
+    --jtk-delete-icon:url(data:image/svg+xml;base64,PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgLTI1NiAxNzkyIDE3OTIiIHZlcnNpb249IjEuMSI+CiAgICA8ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwtMSwxOTcuNDIzNzMsMTI1NS4wNTA4KSI+CiAgICAgICAgPHBhdGggc3Ryb2tlPSJjdXJyZW50Q29sb3IiIGQ9Ik0gNTEyLDgwMCBWIDIyNCBxIDAsLTE0IC05LC0yMyAtOSwtOSAtMjMsLTkgaCAtNjQgcSAtMTQsMCAtMjMsOSAtOSw5IC05LDIzIHYgNTc2IHEgMCwxNCA5LDIzIDksOSAyMyw5IGggNjQgcSAxNCwwIDIzLC05IDksLTkgOSwtMjMgeiBtIDI1NiwwIFYgMjI0IHEgMCwtMTQgLTksLTIzIC05LC05IC0yMywtOSBoIC02NCBxIC0xNCwwIC0yMyw5IC05LDkgLTksMjMgdiA1NzYgcSAwLDE0IDksMjMgOSw5IDIzLDkgaCA2NCBxIDE0LDAgMjMsLTkgOSwtOSA5LC0yMyB6IG0gMjU2LDAgViAyMjQgcSAwLC0xNCAtOSwtMjMgLTksLTkgLTIzLC05IGggLTY0IHEgLTE0LDAgLTIzLDkgLTksOSAtOSwyMyB2IDU3NiBxIDAsMTQgOSwyMyA5LDkgMjMsOSBoIDY0IHEgMTQsMCAyMywtOSA5LC05IDksLTIzIHogTSAxMTUyLDc2IHYgOTQ4IEggMjU2IFYgNzYgUSAyNTYsNTQgMjYzLDM1LjUgMjcwLDE3IDI3Ny41LDguNSAyODUsMCAyODgsMCBoIDgzMiBxIDMsMCAxMC41LDguNSA3LjUsOC41IDE0LjUsMjcgNywxOC41IDcsNDAuNSB6IE0gNDgwLDExNTIgaCA0NDggbCAtNDgsMTE3IHEgLTcsOSAtMTcsMTEgSCA1NDYgcSAtMTAsLTIgLTE3LC0xMSB6IG0gOTI4LC0zMiB2IC02NCBxIDAsLTE0IC05LC0yMyAtOSwtOSAtMjMsLTkgaCAtOTYgViA3NiBxIDAsLTgzIC00NywtMTQzLjUgLTQ3LC02MC41IC0xMTMsLTYwLjUgSCAyODggcSAtNjYsMCAtMTEzLDU4LjUgUSAxMjgsLTExIDEyOCw3MiB2IDk1MiBIIDMyIHEgLTE0LDAgLTIzLDkgLTksOSAtOSwyMyB2IDY0IHEgMCwxNCA5LDIzIDksOSAyMyw5IGggMzA5IGwgNzAsMTY3IHEgMTUsMzcgNTQsNjMgMzksMjYgNzksMjYgaCAzMjAgcSA0MCwwIDc5LC0yNiAzOSwtMjYgNTQsLTYzIGwgNzAsLTE2NyBoIDMwOSBxIDE0LDAgMjMsLTkgOSwtOSA5LC0yMyB6Ii8+CiAgICA8L2c+Cjwvc3ZnPgo=);
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.jtk-demo-main {
+    display: flex;
+    height: 100vh;
+}
+
+.jtk-demo-canvas {
+    background-color: white;
+    display: flex;
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden !important;
+}
+
+.jtk-demo-rhs {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: #f9f9f9;
+    flex: 0 0 250px;
+    padding: 20px 5px 0 5px;
+}
+
+.miniview {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    z-index: 100;
+}
+
+.jtk-demo-main .description {
+    font-size: 13px;
+    padding: 13px;
+}
+
+.jtk-demo-main .description ul {
+    margin: 0;
+    padding: 0 0 0 20px;
+}
+
+.jtk-demo-main .description li {
+    list-style-type: disc !important;
+    margin: 3px 0;
+}
+
+.jtk-controls-container {
+    top: 25px;
+    position: absolute;
+    left: 25px;
+    z-index: 1;
+    font-size:14px;
+}
+
+/* ----------------- mindmap node styles ------------*/
+
+
+.jtk-mindmap-vertex {
+    width:150px;
+    height:90px;
+    background-color:#309fb6;
+    color:white;
+    font-weight:600;
+    border:0.1rem solid;
+    padding:0.25rem;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 0.25rem;
+    flex-direction: column;
+    text-align: center;
+}
+
+.jtk-surface-selected-element {
+    outline:1px solid orangered;
+    outline-offset: 1rem;
+}
+
+.jtk-add-mindmap-child {
+    position:absolute;
+
+    cursor:pointer;
+    bottom:-1px;
+}
+
+.jtk-add-mindmap-child:after {
+    content:'+';
+    text-align:center;
+}
+
+.jtk-add-mindmap-child:hover {
+    color:orangered;
+}
+
+
+.jtk-add-mindmap-child[data-direction='left'] {
+    left:5px;
+}
+
+.jtk-add-mindmap-child[data-direction='right'] {
+    right:5px;
+}
+
+.jtk-mindmap-info {
+    cursor:pointer;
+    position:absolute;
+    left:6px;
+    top:0;
+}
+
+.jtk-mindmap-info:after {
+    content:" i ";
+    font-weight:600;
+}
+
+.jtk-mindmap-info:hover {
+     color:orangered;
+ }
+
+.jtk-mindmap-delete {
+    position:absolute;
+    cursor:pointer;
+    color:white;
+    top:0;
+    right:3px;
+}
+
+.jtk-mindmap-delete:after {
+    content:"✖";
+}
+
+.jtk-mindmap-delete:hover {
+     color:orangered;
+ }
+
+/* ----------------- INSPECTOR ----------------------- */
+
+.jtk-inspector input[type="text"], .jtk-inspector textarea {
+    width:90%;
+    margin:1rem;
+}
+
+.jtk-inspector input[type="text"] {
+    height:2rem;
+}
